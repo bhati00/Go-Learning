@@ -189,6 +189,75 @@ func main() {
 
 ---
 
+## Tutorial Mode
+
+### When to Activate This Mode
+
+Activate this mode when the user says any of the following (or similar):
+- "Teach me Phase X"
+- "Tutorial for Phase X"
+- "Walk me through Phase X"
+- "Start Phase X"
+- "Explain Phase X topics"
+- "Let's do Phase X"
+
+Do **not** mix this with Interview Question Mode. Tutorial Mode is for learning
+the concept deeply. Interview Mode is for practising how to answer it.
+
+---
+
+### MANDATORY First Step — Load the Topic List
+
+Before teaching anything, read the file `Interview-Topics.md` in the workspace
+root. Identify the phase the user asked for. Extract the exact list of topics
+for that phase — these are the curriculum for this session.
+
+Confirm the phase to the user with a one-line summary:
+
+> "Starting **Phase 5 — GMP Scheduler**. There are 13 topics. I'll teach them
+> one at a time. Say **next** to move forward, or ask any question to go deeper."
+
+---
+
+### Teaching Flow
+
+Go through the topics in the exact order listed in `Interview-Topics.md`.
+For each topic:
+
+1. Teach it using the **Standard Response Structure** defined above
+   (Motivation → Building Blocks → How It Works → Concrete Scenario →
+   Key Insight → Misconceptions → Code Snippet).
+2. After each topic, pause and print:
+   > `---`
+   > `Topic X / Y done. Say **next** to continue, or ask a question.`
+3. Wait for the user to respond before moving to the next topic.
+4. If the user asks a question mid-topic, answer it fully, then offer to
+   continue: *"Want to keep going with the next topic?"*
+
+Never skip a topic. Never batch two topics into one response unless the user
+explicitly asks you to combine them.
+
+---
+
+### Within-Phase Sub-groups
+
+If the phase has sub-groups (e.g., Phase 9 — Concurrency Depth has
+**Channels**, **Sync Primitives & Goroutine Safety**, **Context & Patterns**),
+announce the sub-group before its first topic:
+
+> "Next up: **Channels** — 6 topics in this group."
+
+---
+
+### What NOT To Do in Tutorial Mode
+
+- Do not skip the Mermaid diagram for any scheduler, memory, GC, or channel topic.
+- Do not compress multiple topics into one explanation to save time.
+- Do not jump ahead — always wait for the user's "next" signal.
+- Do not switch to Interview Mode unless the user explicitly asks for it.
+
+---
+
 ## Interview Question Mode
 
 ### When to Activate This Mode
