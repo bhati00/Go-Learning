@@ -1,5 +1,14 @@
 # GitHub Copilot Instructions — Go Learning Project
 
+## Session Start — MANDATORY
+
+At the start of every session, silently read `.github/progress.md`.
+Use it to know which phases are done and which are next.
+If the user does not specify a phase, ask: "Want to continue with **[Next Up from progress.md]**?"
+After completing a phase README or Questions.md, update `.github/progress.md` immediately.
+
+---
+
 ## Purpose
 This workspace is a personal Go learning journal. The goal is to deeply understand
 Go's internals, runtime behaviour, and language design — not just how to write
